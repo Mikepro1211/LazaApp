@@ -1,5 +1,4 @@
 import { TouchableOpacity ,StyleSheet, View, Pressable, Text} from "react-native";
-
 export default function Button(theme , label , onPress){
     if(theme==="primary"){
         return(
@@ -20,10 +19,8 @@ export default function Button(theme , label , onPress){
         <Pressable style={styles.button} onPress={onPress}>
             <Text style={styles.buttonLabel}>{label}</Text>
         </Pressable>
-
     </View>
-  )
-   
+  )   
 }
 const styles = StyleSheet.create({
    

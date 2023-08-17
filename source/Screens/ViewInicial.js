@@ -1,41 +1,49 @@
 
 import * as React from 'react';
-import {View, StyleSheet, Text ,  TouchableOpacity, Alert } from 'react-native'
-import ButtonFView from '../Components/ButtonFView'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Started from './Started'
-
-const Stack = createNativeStackNavigator();
-
-export default function ViewInicial ({title, subtitle ,subtittledos, navigation}){
+import {View, StyleSheet, Text , Image, TouchableHighlight , Pressable , StatusBar} from 'react-native'
+import ButtonFView from '../Components/ButtonFView' 
+export default function ViewInicial ({navigation}){
   return(
+  <View style={styles.screen}>
+    <StatusBar style="auto"/>
   <View style={styles.container}>
-    <Text style={styles.titulo}>{title}</Text>
-    <Text style={styles.subtitle}>{subtitle}</Text>
-    <Text style={styles.subtitledos}>{subtittledos}</Text>
-   <View style={styles.buttonContainer}>
-   <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Started' component={Started}/>
-      </Stack.Navigator>
-     </NavigationContainer>
 
-   <ButtonFView style={styles.SecondButton}  label="men" onPress={()=>{navigation.navigate('Started')}}/>
-   <ButtonFView style={styles.SecondButton} theme="purple" label="women" />
+    <Text style={styles.titulo}>Look Good, Feel Good</Text>
+    <Text style={styles.subtitle}>create you individual & unique style</Text>
+    <Text style={styles.subtitledos}>'look amazing every day'</Text>
+   <View style={styles.buttonContainer}>
+   <ButtonFView style={styles.SecondButton}  label="men" onPress={()=>navigation.navigate("Inicio")}/>
+   <ButtonFView style={styles.SecondButton} theme="purple" label="women" onPress={()=>navigation.navigate("Inicio")}/>
+   <Pressable style={styles.skip} onPress={()=>navigation.navigate("Inicio")}>
+    <Text>Skip</Text>
+   </Pressable>
    </View>
    
+   </View>
    </View>
    
   )
 }
-
 const styles = StyleSheet.create({
+  image:{
+    width: '100%',
+    height:'90%',
+    marginTop:100,
+    marginLeft:70,
+    position:'absolute'
+  },
+  screen:{
+    flex: 1,
+    backgroundColor: '#9775FA',
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
    container:{
     width:'95%',
-    paddingTop:'60%',
+    paddingTop:'66%',
     backgroundColor: 'white',
-    marginTop:'125%',
+    position:'absolute',
+    top:550,
     borderRadius: 35,
     
    },
@@ -76,6 +84,11 @@ const styles = StyleSheet.create({
     position:'absolute',
     top: 125
     
+   },
+   skip:{
+    position:'absolute',
+    left:170,
+    top: 100
    }
   
 })

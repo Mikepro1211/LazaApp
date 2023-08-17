@@ -1,6 +1,6 @@
 import { View , StyleSheet, TouchableOpacity,Text} from "react-native";
 export default function ButtonFView({theme, label, onPress}){
- 
+    
     if(theme==="purple"){
     return(
             <TouchableOpacity
