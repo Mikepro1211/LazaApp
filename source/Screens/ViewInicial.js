@@ -1,13 +1,14 @@
 
 import * as React from 'react';
-import {View, StyleSheet, Text , Image, TouchableHighlight , Pressable , StatusBar} from 'react-native'
+import {View, StyleSheet, Text , Image, Pressable , StatusBar} from 'react-native'
 import ButtonFView from '../Components/ButtonFView' 
 export default function ViewInicial ({navigation}){
   return(
   <View style={styles.screen}>
     <StatusBar style="auto"/>
+    <Image source={require('../../assets/boyContainer.png')}/>
   <View style={styles.container}>
-
+     
     <Text style={styles.titulo}>Look Good, Feel Good</Text>
     <Text style={styles.subtitle}>create you individual & unique style</Text>
     <Text style={styles.subtitledos}>'look amazing every day'</Text>

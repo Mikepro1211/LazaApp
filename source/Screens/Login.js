@@ -1,4 +1,4 @@
-import { View , Text,  StyleSheet , StatusBar} from "react-native";
+import { View , Text,  StyleSheet , StatusBar, Pressable, TouchableOpacity} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SocialMediaButton from "../Components/SocialMediaButton";
 export default function Login({navigation}){
@@ -6,13 +6,19 @@ export default function Login({navigation}){
         <SafeAreaView style={styles.container}>
         
         <View>
-            <Text style={styles.text}>Sign Up</Text>
+            <Text style={styles.text}>Let's get started</Text>
             <View style={styles.socialmediaContainer}>
+            <SocialMediaButton socialmedia='google' title={'Google'}/>
             <SocialMediaButton socialmedia='facebook' title={'Facebook'} />
-            <SocialMediaButton socialmedia='twitter' title={'twitter'} />
+            <SocialMediaButton socialmedia='twitter' title={'Github'} />
+            
             </View>
-           
+          <TouchableOpacity style={styles.pressable}onPress={()=>navigation.navigate("UserLogin")}>
+            <Text style= {styles.pressableFont} >Already have an account? Sign in</Text>
+          </TouchableOpacity>
+         
         </View>
+        <SocialMediaButton socialmedia='bottomBotton' title={'Create an Account'} onPress={()=>navigation.navigate("Register")}/>
         </SafeAreaView>
        
     )
@@ -27,8 +33,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     position:  'absolute',
-    top: 10,
-    left: 140
+    top: 15,
+    left: 90
     
   },
   socialmediaContainer
@@ -38,5 +44,18 @@ const styles = StyleSheet.create({
     top:200,
     left:20,
     
-  }
+  },
+  pressable:{
+    position: 'absolute',
+    top: 620,
+    left: 80,
+    
+  },
+  pressableFont:{
+    fontWeight: 'bold',
+    
+
+  },
+  
+  
 })
