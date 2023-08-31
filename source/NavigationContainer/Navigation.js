@@ -8,6 +8,7 @@ import Register from '../Screens/Register';
 import Login from '../Screens/Login';
 import UserLogin from '../Screens/UserLogin';
 import ForgetPassword from '../Screens/ForgetPassword';
+import Home from '../Screens/Home';
 const Stack = createNativeStackNavigator();
 
 
@@ -29,6 +30,7 @@ export default function Navigation(){
         <Stack.Screen name='Forget' component={ForgetPassword} options={{ title:'' ,headerStyle:{
           backgroundColor: '#E5E5E5', headerShown: false
         }, headerTintColor:'black', headerShadowVisible: false ,}} />
+        <Stack.Screen name='Home' component={Home}/>
         </Stack.Group>
         
           

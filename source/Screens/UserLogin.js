@@ -30,7 +30,7 @@ export default function UserLogin({navigation}) {
     <Text style={[styles.forgotPasswordText]}>Forgot password?</Text>
    </TouchableOpacity>
    
-   <SocialMediaButton socialmedia="bottomBotton" title="Login"/>
+   <SocialMediaButton socialmedia="bottomBotton" title="Login" onPress={()=> navigation.navigate("Home")}/>
   </View>
   )
 }
