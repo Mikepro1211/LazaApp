@@ -1,15 +1,63 @@
-import { View , Text,  StyleSheet , StatusBar, Pressable, TouchableOpacity} from "react-native";
+import { useState, useEffect } from "react";
+import { View , Text,  StyleSheet , StatusBar, Pressable, TouchableOpacity, Image} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SocialMediaButton from "../Components/SocialMediaButton";
+import * as Facebook from 'expo-auth-session/providers/facebook'
+import * as WebBrowser from 'expo-web-browser'
+
+WebBrowser.maybeCompleteAuthSession();
+
 export default function Login({navigation}){
+
+  const [user , setUser] = useState(null);
+  const [request , response,propmtAsync] = Facebook.useAuthRequest({
+    clientId: "671641438216089",
+
+  });
+   
+
+
+  useEffect(()=>{
+    if(response && response.type ==="success" && response.authentication){
+      (async ()=>{
+        const userInfoResponse = await fetch(
+          `https://graph.faceboook.com/me?access_token=${response.authentication.accessToken}&fields=id,name,picture.type(large)`
+
+        );
+        const userInfo = await userInfoResponse.json()
+        setUser(userInfo)
+      })();
+    }
+  },{response})
+
+  const handlePressAsync = async ()=>{
+    const result = await propmtAsync()
+    if(result.type !=="success"){
+      alert("Something went wrong")
+       return;
+    }
+}
+
+  function  Profile ({user})
+{
+  return(
+    <View>
+      <Image source={{uri: user.picture.data.url}}/>
+      <Text>{user.name}</Text>
+      <Text>{user.id}</Text>
+    </View>
+  )
+}
+
     return(
         <SafeAreaView style={styles.container}>
         
         <View>
+          
             <Text style={styles.text}>Let's get started</Text>
             <View style={styles.socialmediaContainer}>
             <SocialMediaButton socialmedia='google' title={'Google'}/>
-            <SocialMediaButton socialmedia='facebook' title={'Facebook'} />
+            <SocialMediaButton socialmedia='facebook' title={'Facebook'}onPress={handlePressAsync} />
             <SocialMediaButton socialmedia='twitter' title={'Github'} />
             
             </View>
