@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "444058057384",
+    "project_id": "lazaapp-397515",
+    "storage_bucket": "lazaapp-397515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444058057384:android:0a09b97456b66b9cb1209d",
+        "android_client_info": {
+          "package_name": "com.mikepro1211.Laza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444058057384-bg4rusiauemb9ti5pl0divrv1l7pbnrc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mikepro1211.Laza",
+            "certificate_hash": "6c756761ed8042ef7c524344c05d80b7ff6c9f96"
+          }
+        },
+        {
+          "client_id": "444058057384-h2v4lkadohr1758jbs5g068gmi2cliue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mikepro1211.Laza",
+            "certificate_hash": "288c007acd3da90295be7c5f1e043d633febcaa5"
+          }
+        },
+        {
+          "client_id": "444058057384-i6ei7oetg1o8mqi96pf3e7opbklljpql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeW-kWucSD88-NYx2eX-ii2pSw7qAqe50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444058057384-i6ei7oetg1o8mqi96pf3e7opbklljpql.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "444058057384-i6sodhbpsutb3edio5rkoqahvfvg2lio.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ios.client"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,21 @@
   "expo": {
     "name": "Laza",
     "slug": "Laza",
+    
+    "plugins": [
+      [
+        "react-native-fbsdk-next",
+        {
+          "appID": "1118372625805258",
+          "clientToken": "27647414c57642550d1072c88b343dc7",
+          "displayName": "LazaApp"         
+        }
+        
+  
+      ],
+      "@react-native-google-signin/google-signin"
+      
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,13 +33,20 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.mikepro1211.Laza"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7b6eab3e-c6d9-4ebb-84ee-ee6f9b144dbd"
+      }
     }
   }
 }

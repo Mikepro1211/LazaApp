@@ -1,9 +1,10 @@
 
 import * as React from 'react';
-import {View, StyleSheet, Text , Image, Pressable , StatusBar} from 'react-native'
+import {View, StyleSheet, Text , Image, Pressable , StatusBar, ScrollView} from 'react-native'
 import ButtonFView from '../Components/ButtonFView' 
 export default function ViewInicial ({navigation}){
   return(
+    <ScrollView>
   <View style={styles.screen}>
     <StatusBar style="auto"/>
     <Image source={require('../../assets/boyContainer.png')}/>
@@ -22,6 +23,7 @@ export default function ViewInicial ({navigation}){
    
    </View>
    </View>
+   </ScrollView>
    
   )
 }
