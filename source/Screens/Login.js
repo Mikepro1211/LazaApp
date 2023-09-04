@@ -9,6 +9,8 @@ import {firebase} from '../../config'
 import {LoginManager, AccessToken} from 'react-native-fbsdk-next'
 import auth from '@react-native-firebase/auth'
 
+
+
 //google 
 import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin";
 
@@ -144,7 +146,6 @@ function holaPapu(){
             
             <SocialMediaButton socialmedia='facebook' title={'Facebook'} onPress={signInWithFB} />
             <SocialMediaButton socialmedia='twitter' title={'Github'} onPress={GooglesignOut} />
-            
             </View>
           <TouchableOpacity style={styles.pressable}onPress={()=>navigation.navigate("UserLogin")}>
             <Text style= {styles.pressableFont} >Already have an account? Sign in</Text>
