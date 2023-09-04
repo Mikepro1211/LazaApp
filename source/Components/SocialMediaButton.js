@@ -11,14 +11,14 @@ export default function SocialMediaButton(  {socialmedia ,title , onPress}) {
      )
     }if(socialmedia==='twitter'){
         return(
-            <TouchableOpacity style={[ styles.button ,styles.twitter]}>
+            <TouchableOpacity style={[ styles.button ,styles.twitter]} onPress={onPress}>
                 <Text style={styles.title}>{title}</Text>
             </TouchableOpacity>
         )
     }if(      socialmedia==='google')
     {
         return(
-        <TouchableOpacity style={[ styles.button ,styles.google]}>
+        <TouchableOpacity style={[ styles.button ,styles.google]} onPress={onPress}>
         <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
         )

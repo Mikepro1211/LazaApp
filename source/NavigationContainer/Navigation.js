@@ -9,6 +9,7 @@ import Login from '../Screens/Login';
 import UserLogin from '../Screens/UserLogin';
 import ForgetPassword from '../Screens/ForgetPassword';
 import Home from '../Screens/Home';
+import GoogleHome from '../Screens/GoogleHome';
 const Stack = createNativeStackNavigator();
 
 
@@ -31,6 +32,7 @@ export default function Navigation(){
           backgroundColor: '#E5E5E5', headerShown: false
         }, headerTintColor:'black', headerShadowVisible: false ,}} />
         <Stack.Screen name='Home' component={Home}/>
+        <Stack.Screen name='GoogleHome' component={GoogleHome}/>
         </Stack.Group>
         
           
